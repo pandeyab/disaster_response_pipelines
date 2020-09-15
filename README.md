@@ -37,14 +37,14 @@ This repository contains code for a web app which an emergency worker could use 
 The app uses a ML model to categorize any new messages received, and the repository also contains the code used to train the model and to prepare any new datasets for model training purposes.
 
 ## Data Required for poject <a name="data"></a>
-* **data**: This folder contains sample messages and categories datasets in csv format.
+* **data**: This folder contains sample messages and categories datasets in csv format and DisasterResponse database.
 
 ## Files Description <a name="files"></a>
 * **process_data.py**: This code takes as its input csv files containing message data and message categories (labels), and creates an SQLite database containing a merged and cleaned version of this data.
 * **train_classifier.py**: This code takes the SQLite database produced by process_data.py as an input and uses the data contained within it to train and tune a ML model for categorizing messages. The output is a pickle file containing the fitted model. Test evaluation metrics are also printed as part of the training process.
+* **run.py**: This to run flask web app. This will display the results in a Flask web app
 * **ETL Pipeline Preparation.ipynb**: The code and analysis contained in this Jupyter notebook was used in the development of process_data.py. process_data.py effectively automates this notebook.
 * **ML Pipeline Preparation.ipynb**: The code and analysis contained in this Jupyter notebook was used in the development of train_classifier.py. In particular, it contains the analysis used to tune the ML model and determine which algorithm to use. train_classifier.py effectively automates the model fitting process contained in this notebook.
-
 
 ## Commands for execution <a name="commands"></a>
 1. Run the following commands in the project's root directory to set up your database and model.
@@ -58,7 +58,6 @@ The app uses a ML model to categorize any new messages received, and the reposit
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
-
 
 ## Licensing, Authors, Acknowledgements
 This app was completed as part of the [Udacity Data Scientist Nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025). Code templates and data were provided by Udacity. The data was originally sourced by Udacity from Figure Eight.
