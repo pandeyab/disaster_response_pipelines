@@ -47,20 +47,16 @@ The app uses a ML model to categorize any new messages received, and the reposit
 
 
 ## Commands for execution <a name="commands"></a>
-### ***Run process_data.py***
-1. Save the data folder in the current working directory and process_data.py in the data folder.
-2. From the current working directory, run the following command:
-`python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+1. Run the following commands in the project's root directory to set up your database and model.
 
-### ***Run train_classifier.py***
-1. In the current working directory, create a folder called 'models' and save train_classifier.py in this.
-2. From the current working directory, run the following command:
-`python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+    - To run ETL pipeline that cleans data and stores in database
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+    - To run ML pipeline that trains classifier and saves
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
-### ***Run the web app***
-1. Save the app folder in the current working directory.
-2. Run the following command in the app directory:
+2. Run the following command in the app's directory to run your web app.
     `python run.py`
+
 3. Go to http://0.0.0.0:3001/
 
 
